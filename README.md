@@ -17,6 +17,9 @@ Users upload one garment photo, choose model preferences, and generate a photore
 ## Tech Stack
 - Next.js (App Router, TypeScript)
 - Tailwind CSS v4
+- Radix UI Select (`@radix-ui/react-select`)
+- Framer Motion
+- Lucide React Icons
 - Puter.js (`https://js.puter.com/v2/`)
 - Gemini image model via Puter (`gemini-3-pro-image-preview`)
 
@@ -90,7 +93,8 @@ npm start
 ## Customization Pointers
 - Update selectable countries, genders, and garment types in `lib/options.ts`.
 - Refine prompt strategy in `lib/prompt.ts`.
-- Adjust UI layout and styling in `components/try-on-studio.tsx` and `app/globals.css`.
+- Adjust UI layout, motion, and controls in `components/try-on-studio.tsx`.
+- Tune app-wide color palette and typography in `app/globals.css` and `app/layout.tsx`.
 
 ## Scope
 - Single-page experience

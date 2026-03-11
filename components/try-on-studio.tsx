@@ -96,9 +96,9 @@ function StyledSelect<T extends string>({
 }: StyledSelectProps<T>) {
   return (
     <div>
-      <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6a675e]">{label}</p>
+      <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f7f0d8]">{label}</p>
       <Select.Root value={value} onValueChange={(next) => onValueChange(next as T)}>
-        <Select.Trigger className="flex h-11 w-full items-center justify-between rounded-xl border border-[#d9cfaf] bg-[#fffaf0] px-3 text-sm text-[#282a26] outline-none transition-colors hover:border-[#e04c1f]/70 focus:border-[#e04c1f]">
+        <Select.Trigger className="flex h-11 w-full items-center justify-between rounded-xl border border-[#d9cfaf] bg-[#616261] px-3 text-sm text-[#f1e9cd] outline-none transition-colors hover:border-[#e04c1f]/70 focus:border-[#e04c1f]">
           <Select.Value />
           <Select.Icon>
             <ChevronDown className="h-4 w-4 text-[#6a675e]" />
@@ -282,8 +282,8 @@ export function TryOnStudio() {
         transition={{ duration: 0.35, ease: "easeOut" }}
         className="mb-6 text-center sm:mb-8"
       >
-        <p className="font-display text-5xl font-semibold tracking-tight text-[#F8F5EE] sm:text-6xl">DripX</p>
-        <p className="mt-2 text-sm text-[#6a675e] sm:text-base">AI Virtual Try-On Studio</p>
+        <p className="font-display text-5xl font-semibold tracking-tight text-[#e04c1f] sm:text-6xl">DripX</p>
+        <p className="mt-2 text-sm text-[#282a26] sm:text-base">AI Virtual Try-On Studio</p>
       </motion.header>
 
       <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
@@ -291,17 +291,17 @@ export function TryOnStudio() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.05, ease: "easeOut" }}
-          className="rounded-2xl border border-[#d9cfaf] bg-[#f7f0d8]/95 p-4 shadow-2xl shadow-[#7b6f4f]/15 sm:p-6"
+          className="rounded-2xl border border-[#d9cfaf] bg-[#433F3D]/95 p-4 shadow-2xl shadow-[#7b6f4f]/15 sm:p-6"
         >
           <div className="space-y-5">
             <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6a675e]">
+              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f7f0d8]">
                 Upload garment image
               </p>
               <label
                 htmlFor="garment-upload"
-                className="group relative block cursor-pointer overflow-hidden rounded-2xl border border-dashed border-[#d9cfaf] bg-[#fffaf0] p-4 transition-colors hover:border-[#e04c1f] hover:bg-[#fff5ea] sm:p-5"
-              >
+                className="group relative block cursor-pointer overflow-hidden rounded-2xl border border-dashed border-[#d9cfaf] bg-[#616261] p-4 transition-colors hover:border-[#e04c1f]  sm:p-5"
+                >
                 <input
                   id="garment-upload"
                   type="file"
@@ -322,7 +322,7 @@ export function TryOnStudio() {
                         className="h-64 w-full object-contain sm:h-72"
                       />
                     </div>
-                    <p className="text-center text-xs text-[#6a675e]">
+                    <p className="text-center text-xs text-[#f1e9cd]">
                       Click to replace image · PNG/JPG/WEBP · up to {MAX_FILE_SIZE_MB}MB
                     </p>
                   </div>
@@ -331,8 +331,8 @@ export function TryOnStudio() {
                     <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#d9cfaf] bg-[#f6ecde] text-[#282a26] transition-colors group-hover:border-[#e04c1f] group-hover:text-[#e04c1f]">
                       <Upload className="h-5 w-5" />
                     </span>
-                    <p className="text-sm font-medium text-[#282a26]">Drag & drop or click to upload</p>
-                    <p className="text-xs text-[#6a675e]">PNG/JPG/WEBP · max {MAX_FILE_SIZE_MB}MB</p>
+                    <p className="text-sm font-medium text-[#fffaf0]">Drag & drop or click to upload</p>
+                    <p className="text-xs text-[#f1e9cd]">PNG/JPG/WEBP · max {MAX_FILE_SIZE_MB}MB</p>
                   </div>
                 )}
               </label>
@@ -355,7 +355,7 @@ export function TryOnStudio() {
             </div>
 
             <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6a675e]">
+              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f7f0d8]">
                 Garment category
               </p>
               <div className="flex flex-wrap gap-2">
@@ -367,10 +367,10 @@ export function TryOnStudio() {
                       type="button"
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setGarmentType(option)}
-                      className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                      className={`rounded-full border-2 px-4 py-2 text-sm transition-colors ${
                         active
-                          ? "border-[#e04c1f] bg-[#e04c1f]/12 text-[#282a26] shadow-sm shadow-[#e04c1f]/20"
-                          : "border-[#d9cfaf] bg-[#fffaf0] text-[#282a26] hover:border-[#e04c1f]/70"
+                          ? "border-[#e04c1f] bg-[#f1e9cd] text-[#3a3f44] shadow-sm shadow-[#e04c1f]/20"
+                          : "border-[#d9cfaf] bg-[#616261] text-[#f1e9cd] hover:border-[#e04c1f]/70"
                       }`}
                     >
                       {option}
@@ -381,7 +381,7 @@ export function TryOnStudio() {
             </div>
 
             <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6a675e]">
+              <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f7f0d8]">
                 Optional custom adjustment
               </p>
               <textarea
@@ -389,7 +389,7 @@ export function TryOnStudio() {
                 onChange={(event) => setAdditionalNotes(event.target.value)}
                 placeholder="e.g. tuck in shirt, keep sleeves full, simple studio stance"
                 rows={3}
-                className="block w-full resize-none rounded-xl border border-[#d9cfaf] bg-[#fffaf0] px-3 py-2.5 text-sm text-[#282a26] outline-none transition-colors placeholder:text-[#8a8578] focus:border-[#e04c1f]"
+                className="block w-full resize-none rounded-xl border border-[#d9cfaf] bg-[#616261] px-3 py-2.5 text-sm text-[#f1e9cd] outline-none transition-colors placeholder:text-[#8a8578] focus:border-[#e04c1f]"
               />
             </div>
 
@@ -400,7 +400,7 @@ export function TryOnStudio() {
               disabled={isGenerating || !isPuterReady}
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#e04c1f] text-sm font-semibold text-[#fff9ef] transition-colors hover:bg-[#c9431a] disabled:cursor-not-allowed disabled:bg-[#d9a494] disabled:text-[#fff9ef]/70"
             >
-              {isGenerating ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
+              {isGenerating ? <LoaderCircle className="h-4 w-4 animate-spin" /> : null}
               {isGenerating ? "Generating..." : isPuterReady ? "Generate Try-On" : "Preparing engine..."}
             </motion.button>
 
@@ -416,15 +416,15 @@ export function TryOnStudio() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-          className="rounded-2xl border border-[#d9cfaf] bg-[#f7f0d8]/95 p-4 shadow-2xl shadow-[#7b6f4f]/15 sm:p-6"
+          className="rounded-2xl border border-[#d9cfaf] bg-[#433F3D]/95 p-4 shadow-2xl shadow-[#7b6f4f]/15 sm:p-6"
         >
           <div className="space-y-5">
             <div>
-              <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6a675e]">
+              <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f7f0d8]">
                 <Shirt className="h-3.5 w-3.5" />
                 Uploaded garment
               </p>
-              <div className="flex min-h-44 items-center justify-center overflow-hidden rounded-2xl border border-[#d9cfaf] bg-[#fffaf0] p-3">
+              <div className="flex min-h-44 items-center justify-center overflow-hidden rounded-2xl border border-[#d9cfaf] bg-[#616261] p-3">
                 {garmentPreview ? (
                   <Image
                     src={garmentPreview}
@@ -435,17 +435,17 @@ export function TryOnStudio() {
                     className="h-52 w-full object-contain"
                   />
                 ) : (
-                  <p className="text-center text-sm text-[#6a675e]">Your uploaded garment preview appears here.</p>
+                  <p className="text-center text-sm text-[#f1e9cd]">Your uploaded garment preview appears here.</p>
                 )}
               </div>
             </div>
 
             <div>
-              <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#6a675e]">
+              <p className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-[#fffaf0]">
                 <Sparkles className="h-3.5 w-3.5" />
                 Generated model
               </p>
-              <div className="flex min-h-[340px] items-center justify-center overflow-hidden rounded-2xl border border-[#d9cfaf] bg-[#fffaf0] p-3">
+              <div className="flex min-h-[340px] items-center justify-center overflow-hidden rounded-2xl border border-[#d9cfaf] bg-[#616261] p-3">
                 {resultImageUrl ? (
                   <Image
                     src={resultImageUrl}
@@ -456,7 +456,7 @@ export function TryOnStudio() {
                     className="h-full max-h-[540px] w-full object-contain"
                   />
                 ) : (
-                  <p className="text-center text-sm text-[#6a675e]">
+                  <p className="text-center text-sm text-[#f1e9cd]">
                     Generated image will appear here after you click Generate.
                   </p>
                 )}

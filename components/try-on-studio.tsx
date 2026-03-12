@@ -24,6 +24,7 @@ import {
   type GenderOption,
 } from "@/lib/options";
 import { buildTryOnPrompt, type RandomizedModelTraits } from "@/lib/prompt";
+import { SourceTextModule } from "vm";
 
 const MAX_FILE_SIZE_MB = 10;
 const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
@@ -101,7 +102,7 @@ function StyledSelect<T extends string>({
         <Select.Trigger className="flex h-11 w-full items-center justify-between rounded-xl border border-[#d9cfaf] bg-[#616261] px-3 text-sm text-[#f1e9cd] outline-none transition-colors hover:border-[#e04c1f]/70 focus:border-[#e04c1f]">
           <Select.Value />
           <Select.Icon>
-            <ChevronDown className="h-4 w-4 text-[#6a675e]" />
+            <ChevronDown className="h-4 w-4 text-[#f1e9cd]" />
           </Select.Icon>
         </Select.Trigger>
         <Select.Portal>
@@ -203,7 +204,7 @@ export function TryOnStudio() {
           await window.puter.auth.signIn();
         }
       }
-
+ 
       const randomizedTraits = getRandomTraits();
 
       const prompt = buildTryOnPrompt(
@@ -215,7 +216,7 @@ export function TryOnStudio() {
         },
         randomizedTraits,
       );
-
+       
       const { base64, mimeType } = await fileToPuterPayload(garmentFile);
 
       const generationResult = await window.puter.ai.txt2img({
